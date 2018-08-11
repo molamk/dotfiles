@@ -2,7 +2,6 @@
 export GOPATH=$HOME/code/go
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH=$PATH:$GOPATH/bin
-export JAVA_HOME=`/usr/libexec/java_home -v 1.8.0_172`
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
@@ -74,11 +73,11 @@ plugins=(
   sudo,
   web-search,
   zsh-autosuggestions,
-  vagrant
+  vagrant,
+  zsh-nvm
 )
 
 source $ZSH/oh-my-zsh.sh
-source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=236"
 
 # User configuration
