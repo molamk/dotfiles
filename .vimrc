@@ -32,6 +32,7 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Sets how many lines of history VIM has to remember
 set history=500
+set relativenumber
 
 " Enable filetype plugins
 filetype plugin on
@@ -39,6 +40,7 @@ filetype indent on
 
 " Pathogen
 execute pathogen#infect()
+execute pathogen#helptags()
 
 " NERDTree
 map <C-n> :NERDTreeToggle<CR>
@@ -76,8 +78,8 @@ source $VIMRUNTIME/delmenu.vim
 source $VIMRUNTIME/menu.vim
 
 " Airline theme (git line)
-let g:airline_theme='solarized'
-let g:airline_solarized_bg='dark'
+let g:airline_theme='dracula'
+" let g:airline_solarized_bg='dark'
 
 " Turn on the Wild menu
 set wildmenu
@@ -147,18 +149,25 @@ set foldcolumn=1
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Enable syntax highlighting
 syntax enable 
+color dracula
+colorscheme dracula
+set t_Co=256
+set termguicolors
+let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 
 " Enable 256 colors palette in Gnome Terminal
 if $COLORTERM == 'gnome-terminal'
     set t_Co=256
 endif
 
-try
-    colorscheme solarized
-catch
-endtry
 
-set background=dark
+" try
+"     colorscheme dracula
+" catch
+" endtry
+
+" set background=dark
 
 " Set extra options when running in GUI mode
 if has("gui_running")
@@ -404,6 +413,6 @@ function! VisualSelection(direction, extra_filter) range
 endfunction
 
 " Selective enabling of YCM
-" let g:loaded_youcompleteme = 1
 " autocmd FileType javascript Bundle 'Valloric/YouCompleteMe'
+let g:ycm_global_ycm_extra_conf = "~/.vim/bundle/YouCompleteMe/.ycm_extra_conf.py"
 
