@@ -1,6 +1,7 @@
 #!/bin/bash
 
 for f in $(ls -A ./src); do
-  ln -sf ./src/$f ~/$f
+  rm -rf $HOME/$f
+  ln -s $PWD/src/$f $HOME/$f
 done
 
