@@ -1,4 +1,5 @@
 # If you come from bash you might have to change your $PATH.
+export GO111MODULE=on
 export GOPATH=$HOME/code/go
 export PATH=$HOME/bin:/usr/local/bin:$PATH:/usr/local/go/bin:$GOPATH/bin
 
